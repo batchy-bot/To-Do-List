@@ -1,0 +1,74 @@
+#new-task-modal-container {
+    background: rgba(0, 0, 0, .5);
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+
+
+}
+
+#new-task-modal-form-container {
+    width: 50vw;
+    height: 70vh;
+    background: white;
+
+    box-sizing: border-box;
+    opacity: 0;
+    animation: taskModalAnim .5s ease-out forwards;
+
+}
+
+@keyframes taskModalAnim {
+    from {
+        opacity: 0;
+        transform: scale(.2);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes taskModalOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(.3) translateY(50vh);
+    }
+}
+
+#new-task-modal-form-container form input,
+#new-task-modal-form-container form textarea {
+    border: 1px solid black;
+    width: 95%;
+}
+
+#new-task-modal-form-container form input[type='date'] {
+    width: 20%;
+}
+
+#new-task-modal-form-container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    height: 100%;
+}
+
+#new-task-modal-form-container form textarea {
+    height: 20vh;
+    margin: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}

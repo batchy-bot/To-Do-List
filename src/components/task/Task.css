@@ -1,0 +1,104 @@
+.Task {
+    height: 30%;
+    min-height: 70px;
+    max-height: fit-content;
+    width: 100%;
+    border-radius: 5px;
+    background: var(--accentColor);
+
+    margin: 5px;
+    padding: 0 10px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    transition: all .5s;
+    opacity: 0;
+    animation: taskAnim .5s forwards;
+
+    position: relative;
+}
+
+.Task h2 {
+    color: white;
+    font-weight: 100;
+}
+
+.Task:hover {
+    background: rgb(0, 170, 170);
+}
+
+.Task:active {
+    transform: translateY(10px);
+}
+
+.Task .task-title-container {
+    max-width: 60%;
+    height: 90%;
+
+    display: flex;
+    word-break: break-all;
+}
+
+.Task .task-title-container:hover {
+    overflow-y: auto;
+}
+
+.Task .task-buttons-container {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    position: absolute;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    animation: btnsContainerAnim .5s forwards;
+}
+
+.Task .task-buttons-container button {
+    padding: 3px;
+}
+
+.Task .task-buttons-container.out {
+    animation-name: btnsContainerOut;
+}
+
+
+@keyframes btnsContainerOut {
+    from {
+        right: 0;
+    }
+
+    to {
+        right: -100vw;
+    }
+}
+
+@keyframes btnsContainerAnim {
+    from {
+        right: -100vw;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes taskAnim {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

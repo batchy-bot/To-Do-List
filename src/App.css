@@ -1,38 +1,139 @@
-.App {
-  text-align: center;
+:root {
+  --baseColor: white;
+  --secColor: #2B2B2B;
+  --accentColor: teal;
+  --lightBGTextColor: #232323;
+  --darkBGTextColor: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+#App {
+  background: var(--baseColor);
   min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.todo-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-card:nth-child(1) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.todo-card:nth-child(1) select {
+  background: none;
   color: white;
+  margin-left: 20px;
+  font-size: 27px;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-card:nth-child(1) img {
+  width: 24px;
+  height: 24px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-card:nth-child(1) select option {
+  background: var(--baseColor);
+  padding: 10px 0;
+}
+
+.todo-card:nth-child(1) select option:hover {
+  background: red;
+}
+
+.todo-card:nth-child(1) .todo-part {
+  width: 100%;
+}
+
+.todo-card:nth-child(1) .todo-part:nth-child(1) {
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-card:nth-child(1) .todo-part:nth-child(2) {
+  height: 20vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--darkBGTextColor);
+
+  font-weight: 500;
+}
+
+#task-left-circle {
+  background: none;
+  border: 3px solid var(--accentColor);
+  width: 72px;
+  height: 72px;
+  border-radius: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 200%;
+  margin: 0 10px;
+}
+
+#task-left-text {
+  font-size: 27px;
+}
+
+.todo-card:nth-child(1) .todo-part:nth-child(3) {
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.todo-card:nth-child(1) .todo-part:nth-child(3) .add-task-content {
+  min-width: fit-content;
+
+  height: 100%;
+  width: 50%;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: var(--darkBGTextColor);
+}
+
+.todo-card:nth-child(1) .todo-part:nth-child(4) {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#tasks-container {
+  height: 100%;
+  min-height: 250px;
+  max-height: 300px;
+  width: 80%;
+  background: var(--baseColor);
+  border-radius: 5px;
+  padding: 10px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: center;
 }
